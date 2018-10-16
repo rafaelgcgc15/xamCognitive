@@ -2,6 +2,8 @@
 using Microsoft.ProjectOxford.Face.Contract;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -29,6 +31,8 @@ namespace xamCognitive
         private async void TakePicture(object sender, EventArgs e)
         {
             await CrossMedia.Current.Initialize();
+
+            await CrossPermissions.Current.RequestPermissionsAsync(Permission.Camera);
 
             if (!CrossMedia.Current.IsTakePhotoSupported || !CrossMedia.Current.IsCameraAvailable)
             {
