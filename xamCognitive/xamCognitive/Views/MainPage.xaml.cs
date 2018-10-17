@@ -22,7 +22,7 @@ namespace xamCognitive
         {
             InitializeComponent();
 
-            _faceServiceClient = new FaceServiceClient("a7cff5bb619b4b3e8df3dd14eefcb57c", "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect");
+            _faceServiceClient = new FaceServiceClient("a7cff5bb619b4b3e8df3dd14eefcb57c", "https://westcentralus.api.cognitive.microsoft.com/face/v1.0");
 
             list = new ObservableCollection<Face>();
             FacesListView.ItemsSource = list;
